@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BoardPickActivity">
+
+    <Button
+        android:id="@+id/board1Btn"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="70dp"
+        android:backgroundTint="@color/colorAccent"
+        android:text="ksztalty"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/board2Btn"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="70dp"
+        android:text="kolory"
+        app:layout_constraintStart_toEndOf="@+id/board1Btn"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/board3btn"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:text="litery"
+        app:layout_constraintEnd_toStartOf="@+id/board4Btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/board1Btn" />
+
+    <Button
+        android:id="@+id/board4Btn"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:text="cyfry"
+        app:layout_constraintStart_toEndOf="@+id/board3btn"
+        app:layout_constraintTop_toBottomOf="@+id/board2Btn" />
+</android.support.constraint.ConstraintLayout>

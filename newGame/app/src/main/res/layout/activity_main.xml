@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/playBtn"
+        android:layout_width="260dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="90dp"
+        android:text="Graj"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/tutorialBtn"
+        android:layout_width="260dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="8dp"
+        android:text="Tutorial"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playBtn" />
+
+    <Button
+        android:id="@+id/exitBtn"
+        android:layout_width="260dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="8dp"
+        android:text="Wyjdz"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tutorialBtn" />
+</android.support.constraint.ConstraintLayout>
