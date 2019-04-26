@@ -4,48 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BoardPickActivity">
+    tools:context=".BoardPickActivity"
+    android:background="@drawable/selectmenu">
 
-    <Button
+    <ImageButton
         android:id="@+id/board1Btn"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="70dp"
-        android:backgroundTint="@color/colorAccent"
-        android:text="ksztalty"
+        android:layout_width="180dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="40dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ksztalty" />
 
-    <Button
+    <ImageButton
         android:id="@+id/board2Btn"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="70dp"
-        android:text="kolory"
+        android:layout_width="180dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="40dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
         app:layout_constraintStart_toEndOf="@+id/board1Btn"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/kolory" />
 
-    <Button
-        android:id="@+id/board3btn"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="30dp"
-        android:text="litery"
-        app:layout_constraintEnd_toStartOf="@+id/board4Btn"
+    <ImageButton
+        android:id="@+id/board3Btn"
+        android:layout_width="180dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="5dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/board1Btn" />
+        app:layout_constraintTop_toBottomOf="@+id/board1Btn"
+        app:srcCompat="@drawable/litery" />
 
-    <Button
+    <ImageButton
         android:id="@+id/board4Btn"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
-        android:text="cyfry"
-        app:layout_constraintStart_toEndOf="@+id/board3btn"
-        app:layout_constraintTop_toBottomOf="@+id/board2Btn" />
+        android:layout_width="180dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toEndOf="@+id/board3Btn"
+        app:layout_constraintTop_toBottomOf="@+id/board2Btn"
+        app:srcCompat="@drawable/cyfry" />
 </android.support.constraint.ConstraintLayout>
