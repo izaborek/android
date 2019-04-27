@@ -4,11 +4,15 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -16,26 +20,38 @@ public class Canvas extends View {
 
     Paint paint;
     Path path;
-    ArrayList<Float> listOfPoints;
+    List<Float> listOfPoints;
     float screenWidth = this.getResources().getDisplayMetrics().widthPixels;
     float screenHeigth = this.getResources().getDisplayMetrics().heightPixels;
     boolean ifDraw = false;
     protected final Logger log = Logger.getLogger(getClass().getName()); //java.util.logging.Logger
     int pointsCount;
 
-    public Canvas(Context context, AttributeSet attrs,ArrayList<Float> pointsList) {
+    public Canvas(Context context, AttributeSet attrs,Letter letter) {
         super(context, attrs);
         paint = new Paint();
         path = new Path();
-        this.listOfPoints = pointsList;
+
+        this.listOfPoints = letter.getListOfPoints();
         paint.setAntiAlias(true);
         paint.setColor(Color.RED); //to change later
         paint.setStrokeJoin(Paint.Join.ROUND);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(15f); //change
-        pointsCount = pointsList.size()/2;
-    }
+        pointsCount = letter.getPointsNumber(); //
+        int drawableId=0;
+        try {
+            Class res = R.drawable.class;
+            Field field = res.getField(letter.getName());
+             drawableId = field.getInt(null);
+        }
+        catch (Exception e) {
+            Log.e("MyTag", "Failure to get drawable id.", e);
+        }
 
+        setBackgroundResource(drawableId);
+
+    }
 
     @Override
     protected void onDraw(android.graphics.Canvas canvas) {
@@ -56,16 +72,18 @@ public class Canvas extends View {
     public boolean onTouchEvent(MotionEvent event) {
         float xPos = event.getX();
         float yPos = event.getY();
+
+        log.log(Level.INFO, "Dotknięte współrzędne x:" + xPos + " Y:" + yPos, xPos );
+
+
         float distX = xPos - screenWidth/2;
         float distY = yPos - listOfPoints.get(3);
         double absDist = Math.sqrt(distX * distX + distY * distY);
-        log.log(Level.INFO, "Przetwarzam {0} elementów", distX + " " +distY);
         if (absDist <= 10) {
             ifDraw = true;
         }
         if(ifDraw == true)
         {
-            log.log(Level.INFO, "Przetwarzam {0} elementów", absDist);
             switch (event.getAction()) {
                 case MotionEvent.ACTION_DOWN:
                     path.moveTo(xPos, yPos);

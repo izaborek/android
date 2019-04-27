@@ -24,7 +24,8 @@ public class DrawActivity extends AppCompatActivity {
         listka.add((float) 700);
         listka.add((float) 100);
         listka.add((float) 800);
-        myCanvas = new Canvas(this, null,listka);
+        Letter letter = new Letter("literaa", listka);
+        myCanvas = new Canvas(this, null,letter);
 
         setContentView(myCanvas);
 
