@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.Toast;
 import java.lang.reflect.Field;
 import java.util.List;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Canvas extends View {
@@ -69,7 +68,7 @@ public class Canvas extends View {
         float yPos = event.getY();
         //log.log(Level.INFO, "Dotknięte współrzędne x:" + xPos + " Y:" + yPos, xPos );
         double absDist =  DistanceBetweenPoints(xPos,yPos,listOfPoints.get(pointToBeTouched-1),listOfPoints.get(pointToBeTouched));
-        if (absDist <= 15 && pointToBeTouched == 1) {
+        if (absDist <= 25 && pointToBeTouched == 1) {
             ifDraw = true;
         }
 
@@ -114,7 +113,7 @@ public class Canvas extends View {
                 if (i + 2 != pointToBeTouched) {
                     float xx = listOfPoints.get(i*2);
                     float yy = listOfPoints.get(i*2+1);
-                    if (DistanceBetweenPoints(x, y, xx, yy) <= 15) {
+                    if (DistanceBetweenPoints(x, y, xx, yy) <= 30) {
                         if (i+1 == pointToBeTouched) {
                             pointToBeTouched++;
                         } else {
