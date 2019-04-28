@@ -58,7 +58,7 @@ public class Canvas extends View {
             canvas.drawPoint(listOfPoints.get(i),listOfPoints.get(i+1),paint);
         }
         paint.setStrokeWidth(15f); //change
-        paint.setAntiAlias(false);
+        //paint.setAntiAlias(false);
         paint.setColor(Color.RED);
         canvas.drawPath(path,paint);
     }
@@ -67,15 +67,15 @@ public class Canvas extends View {
     public boolean onTouchEvent(MotionEvent event) {
         float xPos = event.getX();
         float yPos = event.getY();
-        log.log(Level.INFO, "Dotknięte współrzędne x:" + xPos + " Y:" + yPos, xPos );
+        //log.log(Level.INFO, "Dotknięte współrzędne x:" + xPos + " Y:" + yPos, xPos );
         double absDist =  DistanceBetweenPoints(xPos,yPos,listOfPoints.get(pointToBeTouched-1),listOfPoints.get(pointToBeTouched));
-        if (absDist <= 10 && pointToBeTouched == 1) {
+        if (absDist <= 15 && pointToBeTouched == 1) {
             ifDraw = true;
-            //++pointToBeTouched;
         }
+
+            VerifyIfProperPointHasBeenTouched(xPos,yPos);
         if(ifDraw == true)
         {
-            VerifyIfProperPointHasBeenTouched(xPos,yPos);
             switch (event.getAction()) {
                 case MotionEvent.ACTION_DOWN:
                     path.moveTo(xPos, yPos);
@@ -114,7 +114,7 @@ public class Canvas extends View {
                 if (i + 2 != pointToBeTouched) {
                     float xx = listOfPoints.get(i*2);
                     float yy = listOfPoints.get(i*2+1);
-                    if (DistanceBetweenPoints(x, y, xx, yy) <= 10) {
+                    if (DistanceBetweenPoints(x, y, xx, yy) <= 15) {
                         if (i+1 == pointToBeTouched) {
                             pointToBeTouched++;
                         } else {
