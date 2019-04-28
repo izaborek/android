@@ -69,9 +69,9 @@ public class Canvas extends View {
         float yPos = event.getY();
         log.log(Level.INFO, "Dotknięte współrzędne x:" + xPos + " Y:" + yPos, xPos );
         double absDist =  DistanceBetweenPoints(xPos,yPos,listOfPoints.get(pointToBeTouched-1),listOfPoints.get(pointToBeTouched));
-        if (absDist <= 10) {
+        if (absDist <= 10 && pointToBeTouched == 1) {
             ifDraw = true;
-            ++pointToBeTouched;
+            //++pointToBeTouched;
         }
         if(ifDraw == true)
         {
@@ -95,13 +95,7 @@ public class Canvas extends View {
 
         private void cleanCanvas()
         {
-            paint.reset();
             path.reset();
-            //paint.setAntiAlias(true);
-            paint.setColor(Color.RED); //to change later
-            paint.setStrokeJoin(Paint.Join.ROUND);
-            paint.setStyle(Paint.Style.STROKE);
-            paint.setStrokeWidth(15f); //change
             pointToBeTouched = 1;
             ifDraw = false;
         }
@@ -122,7 +116,7 @@ public class Canvas extends View {
                     float yy = listOfPoints.get(i*2+1);
                     if (DistanceBetweenPoints(x, y, xx, yy) <= 10) {
                         if (i+1 == pointToBeTouched) {
-                            ++pointToBeTouched;
+                            pointToBeTouched++;
                         } else {
                             Toast.makeText(this.getContext(),"Rozpocznij jeszcze raz!",Toast.LENGTH_LONG).show();
                             cleanCanvas();
