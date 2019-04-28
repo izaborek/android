@@ -23,6 +23,7 @@ public class Canvas extends View {
     boolean ifDraw = false;
     protected final Logger log = Logger.getLogger(getClass().getName()); //java.util.logging.Logger
     int pointsCount;
+    public int r = 255, g = 0, b = 0;
 
     public Canvas(Context context, AttributeSet attrs,Letter letter) {
         super(context, attrs);
@@ -31,7 +32,7 @@ public class Canvas extends View {
 
         this.listOfPoints = letter.getListOfPoints();
         paint.setAntiAlias(true);
-        paint.setColor(Color.RED); //to change later
+        paint.setColor(Color.rgb(r,g,b));
         paint.setStrokeJoin(Paint.Join.ROUND);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(15f); //change
@@ -46,6 +47,7 @@ public class Canvas extends View {
             Log.e("MyTag", "Failure to get drawable id.", e);
         }
         setBackgroundResource(drawableId);
+
     }
 
     @Override
@@ -59,7 +61,7 @@ public class Canvas extends View {
         }
         paint.setStrokeWidth(15f); //change
         //paint.setAntiAlias(false);
-        paint.setColor(Color.RED);
+        paint.setColor(Color.rgb(r,g,b));
         canvas.drawPath(path,paint);
     }
 

@@ -26,5 +26,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, BoardPickActivity.class));
             }
         });
+
+        exitB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.exit(1);
+            }
+        });
     }
 }
