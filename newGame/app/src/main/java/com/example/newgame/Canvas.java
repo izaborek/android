@@ -4,14 +4,12 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-
+import android.widget.Toast;
 import java.lang.reflect.Field;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,8 +19,7 @@ public class Canvas extends View {
     Paint paint;
     Path path;
     List<Float> listOfPoints;
-    float screenWidth = this.getResources().getDisplayMetrics().widthPixels;
-    float screenHeigth = this.getResources().getDisplayMetrics().heightPixels;
+    Integer pointToBeTouched = 1;
     boolean ifDraw = false;
     protected final Logger log = Logger.getLogger(getClass().getName()); //java.util.logging.Logger
     int pointsCount;
@@ -48,9 +45,7 @@ public class Canvas extends View {
         catch (Exception e) {
             Log.e("MyTag", "Failure to get drawable id.", e);
         }
-
         setBackgroundResource(drawableId);
-
     }
 
     @Override
@@ -60,7 +55,7 @@ public class Canvas extends View {
         paint.setColor(Color.GRAY);
         paint.setStrokeWidth(40f); //ch
         for (int i = 0;i < listOfPoints.size();i+=2) {
-            canvas.drawPoint(canvas.getWidth()/2,listOfPoints.get(i+1),paint);
+            canvas.drawPoint(listOfPoints.get(i),listOfPoints.get(i+1),paint);
         }
         paint.setStrokeWidth(15f); //change
         paint.setAntiAlias(false);
@@ -72,18 +67,15 @@ public class Canvas extends View {
     public boolean onTouchEvent(MotionEvent event) {
         float xPos = event.getX();
         float yPos = event.getY();
-
         log.log(Level.INFO, "Dotknięte współrzędne x:" + xPos + " Y:" + yPos, xPos );
-
-
-        float distX = xPos - screenWidth/2;
-        float distY = yPos - listOfPoints.get(3);
-        double absDist = Math.sqrt(distX * distX + distY * distY);
+        double absDist =  DistanceBetweenPoints(xPos,yPos,listOfPoints.get(pointToBeTouched-1),listOfPoints.get(pointToBeTouched));
         if (absDist <= 10) {
             ifDraw = true;
+            ++pointToBeTouched;
         }
         if(ifDraw == true)
         {
+            VerifyIfProperPointHasBeenTouched(xPos,yPos);
             switch (event.getAction()) {
                 case MotionEvent.ACTION_DOWN:
                     path.moveTo(xPos, yPos);
@@ -97,9 +89,47 @@ public class Canvas extends View {
                     return false;
             }
         }
-
             invalidate();
             return true;
+        }
+
+        private void cleanCanvas()
+        {
+            paint.reset();
+            path.reset();
+            //paint.setAntiAlias(true);
+            paint.setColor(Color.RED); //to change later
+            paint.setStrokeJoin(Paint.Join.ROUND);
+            paint.setStyle(Paint.Style.STROKE);
+            paint.setStrokeWidth(15f); //change
+            pointToBeTouched = 1;
+            ifDraw = false;
+        }
+
+        private double DistanceBetweenPoints(float x1, float y1, float x2, float y2)
+        {
+            float distX = Math.abs(x1-x2);
+            float distY = Math.abs(y1-y2);
+            double absDist = Math.sqrt(distX * distX + distY * distY);
+            return absDist;
+        }
+
+        private void VerifyIfProperPointHasBeenTouched(float x, float y)
+        {
+            for (int i = 0;i < pointsCount/2; i++) {
+                if (i + 2 != pointToBeTouched) {
+                    float xx = listOfPoints.get(i*2);
+                    float yy = listOfPoints.get(i*2+1);
+                    if (DistanceBetweenPoints(x, y, xx, yy) <= 10) {
+                        if (i+1 == pointToBeTouched) {
+                            ++pointToBeTouched;
+                        } else {
+                            Toast.makeText(this.getContext(),"Rozpocznij jeszcze raz!",Toast.LENGTH_LONG).show();
+                            cleanCanvas();
+                        }
+                    }
+                }
+            }
         }
 
 
