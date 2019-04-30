@@ -16,7 +16,7 @@ public class BoardPickActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.board_pick_activity);
 
-        boardOne = findViewById(R.id.board1Btn);
+        boardOne = findViewById(R.id.board3Btn);
 
         boardOne.setOnClickListener(new View.OnClickListener() {
             @Override

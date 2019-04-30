@@ -70,7 +70,7 @@ public class Canvas extends View {
         float yPos = event.getY();
         //log.log(Level.INFO, "Dotknięte współrzędne x:" + xPos + " Y:" + yPos, xPos );
         double absDist =  DistanceBetweenPoints(xPos,yPos,listOfPoints.get(pointToBeTouched-1),listOfPoints.get(pointToBeTouched));
-        if (absDist <= 25 && pointToBeTouched == 1) {
+        if (absDist <= 40 && pointToBeTouched == 1) {
             ifDraw = true;
         }
 
@@ -115,7 +115,7 @@ public class Canvas extends View {
                 if (i + 2 != pointToBeTouched) {
                     float xx = listOfPoints.get(i*2);
                     float yy = listOfPoints.get(i*2+1);
-                    if (DistanceBetweenPoints(x, y, xx, yy) <= 30) {
+                    if (DistanceBetweenPoints(x, y, xx, yy) <= 50) {
                         if (i+1 == pointToBeTouched) {
                             pointToBeTouched++;
                         } else {
@@ -124,6 +124,10 @@ public class Canvas extends View {
                         }
                     }
                 }
+            }
+            if(pointToBeTouched == 6)
+            {
+                Toast.makeText(this.getContext(),"Brawo!",Toast.LENGTH_LONG).show();
             }
         }
 
