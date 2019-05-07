@@ -1,16 +1,20 @@
 package com.example.newgame;
 
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
-public class DrawActivity extends AppCompatActivity {
+public class DrawActivity extends AppCompatActivity  {
 
     Canvas myCanvas;
     LinearLayout  myLayout, canvasLayout;
@@ -31,10 +35,13 @@ public class DrawActivity extends AppCompatActivity {
         listka.add((float) 500);
         listka.add((float) 1200);
         listka.add((float) 820);
+        listka.add((float) 775);
+        listka.add((float) 500);
+        listka.add((float) 1075);
+        listka.add((float) 500);
 
-        Letter letter = new Letter("literaa", listka);
+        final Letter letter = new Letter("literaa", listka);
         myCanvas = new Canvas(this, null,letter);
-
         setContentView(R.layout.activity_draw);
 
         myLayout = findViewById(R.id.panelLayout);
@@ -51,6 +58,8 @@ public class DrawActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 myCanvas.r = 255; myCanvas.g = 0; myCanvas.b = 0;
+               //letter.setName("literab");
+               //myCanvas.RefreshViewAndShowNewView(1,letter);
             }
         });
 
@@ -58,6 +67,8 @@ public class DrawActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 myCanvas.r = 30; myCanvas.g = 144; myCanvas.b = 255;
+                //letter.setName("literac");
+                //myCanvas.RefreshViewAndShowNewView(1,letter);
             }
         });
 
@@ -81,7 +92,6 @@ public class DrawActivity extends AppCompatActivity {
                 myCanvas.r = 255; myCanvas.g = 0; myCanvas.b = 255;
             }
         });
-
 
     }
 }

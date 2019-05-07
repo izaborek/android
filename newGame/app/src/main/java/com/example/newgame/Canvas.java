@@ -74,7 +74,7 @@ public class Canvas extends View {
             ifDraw = true;
         }
 
-            VerifyIfProperPointHasBeenTouched(xPos,yPos);
+        VerifyIfProperPointHasBeenTouched(xPos,yPos);
         if(ifDraw == true)
         {
             switch (event.getAction()) {
@@ -109,15 +109,40 @@ public class Canvas extends View {
             return absDist;
         }
 
-        private void VerifyIfProperPointHasBeenTouched(float x, float y)
+    private int CheckIfIsItRepeatedPoint(int checkIndex)
+    {
+        int touchedPointIndex =  checkIndex; //touchedPoint - need to verify if it is not repeated one
+        float x = listOfPoints.get(touchedPointIndex);
+        float y = listOfPoints.get(touchedPointIndex+1);
+        int index = 0;
+
+        for (int i = 0; i< pointsCount ; i+=2)
+        {
+            if(i!= checkIndex && listOfPoints.get(i) == x && listOfPoints.get(i+1) == y)
+            {
+                index = i/2;
+                break;
+            }
+            else
+            {
+                index = 0;
+            }
+        }
+        return index + 1;
+    }
+
+
+    private void VerifyIfProperPointHasBeenTouched(float x, float y)
         {
             for (int i = 0;i < pointsCount/2; i++) {
-                if (i + 2 != pointToBeTouched) {
+                if (i + 2 != pointToBeTouched && pointToBeTouched - 1!= CheckIfIsItRepeatedPoint(i*2)) {
                     float xx = listOfPoints.get(i*2);
                     float yy = listOfPoints.get(i*2+1);
                     if (DistanceBetweenPoints(x, y, xx, yy) <= 50) {
-                        if (i+1 == pointToBeTouched) {
+
+                        if (i+1 == pointToBeTouched || pointToBeTouched == CheckIfIsItRepeatedPoint(i*2)) {
                             pointToBeTouched++;
+                            break;
                         } else {
                             Toast.makeText(this.getContext(),"Rozpocznij jeszcze raz!",Toast.LENGTH_LONG).show();
                             cleanCanvas();
@@ -125,10 +150,26 @@ public class Canvas extends View {
                     }
                 }
             }
-            if(pointToBeTouched == 6)
+            if(pointToBeTouched == 8)
             {
                 Toast.makeText(this.getContext(),"Brawo!",Toast.LENGTH_LONG).show();
             }
+        }
+
+        public void RefreshViewAndShowNewView(int i, Letter letter)
+        {
+            cleanCanvas();
+            this.listOfPoints = letter.getListOfPoints();
+            int drawableId=0;
+            try {
+                Class res = R.drawable.class;
+                Field field = res.getField(letter.getName());
+                drawableId = field.getInt(null);
+            }
+            catch (Exception e) {
+                Log.e("MyTag", "Failure to get drawable id.", e);
+            }
+            setBackgroundResource(drawableId);
         }
 
 
