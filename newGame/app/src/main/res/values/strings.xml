@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">newGame</string>
+    <string-array name="listaA">
+        <item> 650 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 925 </item>
+        <item> 190 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+        <item> 1200 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+    </string-array>
 </resources>

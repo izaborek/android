@@ -7,10 +7,11 @@ import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
+
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -21,10 +22,13 @@ public class DrawActivity extends AppCompatActivity  {
     ImageButton redB, blueB, greenB, yellowB, purpleB;
 
     ArrayList<Float> listka = new ArrayList<>();
+    List<String> listA;
+    String[] lettersData;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+/*
         listka.add((float) 650);
         listka.add((float) 820);
         listka.add((float) 775);
@@ -39,6 +43,14 @@ public class DrawActivity extends AppCompatActivity  {
         listka.add((float) 500);
         listka.add((float) 1075);
         listka.add((float) 500);
+        */
+        //pobieranie wartosci punktow z pliku xml do tablicy
+        lettersData = getResources().getStringArray(R.array.listaA);
+        listA = Arrays.asList(lettersData);
+        for(int i =0; i<listA.size(); i++) {
+            listka.add(Float.parseFloat(listA.get(i)));
+        }
+        //
 
         final Letter letter = new Letter("literaa", listka);
         myCanvas = new Canvas(this, null,letter);
@@ -53,6 +65,7 @@ public class DrawActivity extends AppCompatActivity  {
         greenB = findViewById(R.id.greenBtn);
         yellowB = findViewById(R.id.yellowBtn);
         purpleB = findViewById(R.id.purpleBtn);
+
 
         redB.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,6 +105,8 @@ public class DrawActivity extends AppCompatActivity  {
                 myCanvas.r = 255; myCanvas.g = 0; myCanvas.b = 255;
             }
         });
+
+
 
     }
 }
