@@ -1,18 +1,12 @@
 package com.example.newgame;
 
-import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-
-import android.widget.Toast;
-
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.List;
 
 public class DrawActivity extends AppCompatActivity  {
@@ -20,10 +14,12 @@ public class DrawActivity extends AppCompatActivity  {
     Canvas myCanvas;
     LinearLayout  myLayout, canvasLayout;
     ImageButton redB, blueB, greenB, yellowB, purpleB;
+    ImageButton nextB, prevB, retryB;
 
     ArrayList<Float> listka = new ArrayList<>();
     List<String> listA;
     String[] lettersData;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +46,7 @@ public class DrawActivity extends AppCompatActivity  {
         for(int i =0; i<listA.size(); i++) {
             listka.add(Float.parseFloat(listA.get(i)));
         }
-        //
+
 
         final Letter letter = new Letter("literaa", listka);
         myCanvas = new Canvas(this, null,letter);
@@ -65,14 +61,15 @@ public class DrawActivity extends AppCompatActivity  {
         greenB = findViewById(R.id.greenBtn);
         yellowB = findViewById(R.id.yellowBtn);
         purpleB = findViewById(R.id.purpleBtn);
-
+        nextB = findViewById(R.id.nextBtn);
+        prevB = findViewById(R.id.previousBtn);
+        retryB = findViewById(R.id.retryBtn);
 
         redB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 myCanvas.r = 255; myCanvas.g = 0; myCanvas.b = 0;
-               //letter.setName("literab");
-               //myCanvas.RefreshViewAndShowNewView(1,letter);
+
             }
         });
 
@@ -80,8 +77,7 @@ public class DrawActivity extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
                 myCanvas.r = 30; myCanvas.g = 144; myCanvas.b = 255;
-                //letter.setName("literac");
-                //myCanvas.RefreshViewAndShowNewView(1,letter);
+
             }
         });
 
@@ -106,7 +102,28 @@ public class DrawActivity extends AppCompatActivity  {
             }
         });
 
+        nextB.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                letter.setName("literab");
+                myCanvas.RefreshViewAndShowNewView(1,letter);
+            }
+        });
 
+        prevB.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                letter.setName("literaa");
+                myCanvas.RefreshViewAndShowNewView(1,letter);
+            }
+        });
 
+        retryB.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                //czyszczenie sceny aby rysowac ponownie
+            }
+        });
     }
+
 }

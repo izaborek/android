@@ -24,6 +24,7 @@ public class Canvas extends View {
     int pointsCount;
     public int r = 255, g = 0, b = 0;
 
+
     public Canvas(Context context, AttributeSet attrs,Letter letter) {
         super(context, attrs);
         paint = new Paint();
