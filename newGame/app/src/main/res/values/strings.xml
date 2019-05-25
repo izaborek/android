@@ -1,6 +1,38 @@
 <resources>
     <string name="app_name">newGame</string>
-    <string-array name="listaA">
+    <string-array name="literaa">
+        <item> 650 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 925 </item>
+        <item> 190 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+        <item> 1200 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+    </string-array>
+    <string-array name="literab">
+        <item> 650 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 925 </item>
+        <item> 190 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+        <item> 1200 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+    </string-array>
+    <string-array name="literac">
         <item> 650 </item>
         <item> 820 </item>
         <item> 775 </item>

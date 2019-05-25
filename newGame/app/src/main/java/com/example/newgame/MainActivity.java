@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 public class MainActivity extends AppCompatActivity {
 
     private ImageButton playB, tutB, exitB;
+    public static int numberOfLETTER = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,10 +1,15 @@
 package com.example.newgame;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.util.Xml;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -19,36 +24,41 @@ public class DrawActivity extends AppCompatActivity  {
     ArrayList<Float> listka = new ArrayList<>();
     List<String> listA;
     String[] lettersData;
-
+    ArrayList<String> listOfLetters = new ArrayList<>();
+    int currentLetterId;
+    String currentLetterImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-/*
-        listka.add((float) 650);
-        listka.add((float) 820);
-        listka.add((float) 775);
-        listka.add((float) 500);
-        listka.add((float) 925);
-        listka.add((float) 190);
-        listka.add((float) 1075);
-        listka.add((float) 500);
-        listka.add((float) 1200);
-        listka.add((float) 820);
-        listka.add((float) 775);
-        listka.add((float) 500);
-        listka.add((float) 1075);
-        listka.add((float) 500);
-        */
+        currentLetterId = MainActivity.numberOfLETTER;
+        Letter letter2 = new Letter();
+        for(int i = 0; i < Letter.ListOfLetters.size();i++)
+        {
+            String currentsign = Letter.ListOfLetters.get(i);
+            if (currentsign.startsWith(String.valueOf(currentLetterId)) == true)
+            {
+                currentLetterImage = currentsign.substring(1,currentsign.length());
+            }
+        }
+
+        int drawableId=0;
+        try {
+            Class res = R.array.class;
+            Field field = res.getField(currentLetterImage);
+            drawableId = field.getInt(null);
+        }
+        catch (Exception e) {
+            Log.e("MyTag", "Failure to get drawable id.", e);
+        }
         //pobieranie wartosci punktow z pliku xml do tablicy
-        lettersData = getResources().getStringArray(R.array.listaA);
+        lettersData = getResources().getStringArray(drawableId);
         listA = Arrays.asList(lettersData);
         for(int i =0; i<listA.size(); i++) {
             listka.add(Float.parseFloat(listA.get(i)));
         }
 
-
-        final Letter letter = new Letter("literaa", listka);
+        final Letter letter = new Letter(currentLetterImage, listka);
         myCanvas = new Canvas(this, null,letter);
         setContentView(R.layout.activity_draw);
 
@@ -105,25 +115,23 @@ public class DrawActivity extends AppCompatActivity  {
         nextB.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                letter.setName("literab");
-                myCanvas.RefreshViewAndShowNewView(1,letter);
+                MainActivity.numberOfLETTER++;
+                startActivity(new Intent(DrawActivity.this, DrawActivity.class));
             }
         });
 
         prevB.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                letter.setName("literaa");
-                myCanvas.RefreshViewAndShowNewView(1,letter);
+                MainActivity.numberOfLETTER--;
+                startActivity(new Intent(DrawActivity.this, DrawActivity.class));
             }
         });
 
         retryB.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                //czyszczenie sceny aby rysowac ponownie
-            }
+                startActivity(new Intent(DrawActivity.this, DrawActivity.class));            }
         });
     }
-
 }
