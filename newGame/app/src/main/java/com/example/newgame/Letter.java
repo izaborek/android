@@ -62,6 +62,19 @@ public class Letter {
             ListOfLetters.add("2kwadrat");
             ListOfLetters.add("3kolo");
         }
+        else if (MainActivity.numberOfBoard == 2)
+        {
+            ListOfLetters.add("1cyfra1");
+            ListOfLetters.add("2cyfra2");
+            ListOfLetters.add("3cyfra3");
+            ListOfLetters.add("4cyfra4");
+            ListOfLetters.add("5cyfra5");
+            ListOfLetters.add("6cyfra6");
+            ListOfLetters.add("7cyfra7");
+            ListOfLetters.add("8cyfra8");
+            ListOfLetters.add("9cyfra9");
+        }
+
     }
 
     public Letter(String name, List<Float> listOfPoints)

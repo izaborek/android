@@ -416,6 +416,150 @@
         <item> 1075 </item>
         <item> 500 </item>
     </string-array>
+    <string-array name="cyfra1">
+        <item> 650 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 925 </item>
+        <item> 190 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+        <item> 1200 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+    </string-array>
+    <string-array name="cyfra2">
+        <item> 650 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 925 </item>
+        <item> 190 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+        <item> 1200 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+    </string-array>
+    <string-array name="cyfra3">
+        <item> 650 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 925 </item>
+        <item> 190 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+        <item> 1200 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+    </string-array>
+    <string-array name="cyfra4">
+        <item> 650 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 925 </item>
+        <item> 190 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+        <item> 1200 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+    </string-array>
+    <string-array name="cyfra5">
+        <item> 650 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 925 </item>
+        <item> 190 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+        <item> 1200 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+    </string-array>
+    <string-array name="cyfra6">
+        <item> 650 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 925 </item>
+        <item> 190 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+        <item> 1200 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+    </string-array>
+    <string-array name="cyfra7">
+        <item> 650 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 925 </item>
+        <item> 190 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+        <item> 1200 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+    </string-array>
+    <string-array name="cyfra8">
+        <item> 650 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 925 </item>
+        <item> 190 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+        <item> 1200 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+    </string-array>
+    <string-array name="cyfra9">
+        <item> 650 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 925 </item>
+        <item> 190 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+        <item> 1200 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+    </string-array>
 
 
 
