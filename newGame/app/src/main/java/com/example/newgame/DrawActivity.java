@@ -1,13 +1,20 @@
 package com.example.newgame;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Xml;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -21,6 +28,7 @@ public class DrawActivity extends AppCompatActivity  {
     ImageButton redB, blueB, greenB, yellowB, purpleB;
     ImageButton nextB, prevB, retryB;
 
+
     ArrayList<Float> listka = new ArrayList<>();
     List<String> listA;
     String[] lettersData;
@@ -32,6 +40,7 @@ public class DrawActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         currentLetterId = MainActivity.numberOfLETTER;
+
         Letter letter2 = new Letter();
         for(int i = 0; i < Letter.ListOfLetters.size();i++)
         {
@@ -142,4 +151,6 @@ public class DrawActivity extends AppCompatActivity  {
                 startActivity(new Intent(DrawActivity.this, DrawActivity.class));            }
         });
     }
+
+
 }

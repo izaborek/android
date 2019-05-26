@@ -35,5 +35,12 @@ public class MainActivity extends AppCompatActivity {
                 System.exit(1);
             }
         });
+
+        tutB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, TutorialActivity.class));
+            }
+        });
     }
 }
