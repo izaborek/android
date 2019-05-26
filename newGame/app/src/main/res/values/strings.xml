@@ -48,5 +48,375 @@
         <item> 1075 </item>
         <item> 500 </item>
     </string-array>
+    <string-array name="literad">
+        <item> 650 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 925 </item>
+        <item> 190 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+        <item> 1200 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+    </string-array>
+    <string-array name="literae">
+        <item> 650 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 925 </item>
+        <item> 190 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+        <item> 1200 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+    </string-array>
+    <string-array name="literaf">
+        <item> 650 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 925 </item>
+        <item> 190 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+        <item> 1200 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+    </string-array>
+    <string-array name="literag">
+    <item> 650 </item>
+    <item> 820 </item>
+    <item> 775 </item>
+    <item> 500 </item>
+    <item> 925 </item>
+    <item> 190 </item>
+    <item> 1075 </item>
+    <item> 500 </item>
+    <item> 1200 </item>
+    <item> 820 </item>
+    <item> 775 </item>
+    <item> 500 </item>
+    <item> 1075 </item>
+    <item> 500 </item>
+</string-array>
+    <string-array name="literah">
+    <item> 650 </item>
+    <item> 820 </item>
+    <item> 775 </item>
+    <item> 500 </item>
+    <item> 925 </item>
+    <item> 190 </item>
+    <item> 1075 </item>
+    <item> 500 </item>
+    <item> 1200 </item>
+    <item> 820 </item>
+    <item> 775 </item>
+    <item> 500 </item>
+    <item> 1075 </item>
+    <item> 500 </item>
+</string-array>
+    <string-array name="literai">
+    <item> 650 </item>
+    <item> 820 </item>
+    <item> 775 </item>
+    <item> 500 </item>
+    <item> 925 </item>
+    <item> 190 </item>
+    <item> 1075 </item>
+    <item> 500 </item>
+    <item> 1200 </item>
+    <item> 820 </item>
+    <item> 775 </item>
+    <item> 500 </item>
+    <item> 1075 </item>
+    <item> 500 </item>
+</string-array>
+    <string-array name="literaj">
+        <item> 650 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 925 </item>
+        <item> 190 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+        <item> 1200 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+    </string-array>
+    <string-array name="literak">
+        <item> 650 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 925 </item>
+        <item> 190 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+        <item> 1200 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+    </string-array>
+    <string-array name="literal">
+        <item> 650 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 925 </item>
+        <item> 190 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+        <item> 1200 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+    </string-array>
+    <string-array name="literam">
+        <item> 650 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 925 </item>
+        <item> 190 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+        <item> 1200 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+    </string-array>
+    <string-array name="literan">
+        <item> 650 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 925 </item>
+        <item> 190 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+        <item> 1200 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+    </string-array>
+    <string-array name="literao">
+        <item> 650 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 925 </item>
+        <item> 190 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+        <item> 1200 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+    </string-array>
+    <string-array name="literap">
+        <item> 650 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 925 </item>
+        <item> 190 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+        <item> 1200 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+    </string-array>
+    <string-array name="literar">
+        <item> 650 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 925 </item>
+        <item> 190 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+        <item> 1200 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+    </string-array>
+    <string-array name="literas">
+        <item> 650 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 925 </item>
+        <item> 190 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+        <item> 1200 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+    </string-array>
+    <string-array name="literat">
+        <item> 650 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 925 </item>
+        <item> 190 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+        <item> 1200 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+    </string-array>
+    <string-array name="literau">
+        <item> 650 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 925 </item>
+        <item> 190 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+        <item> 1200 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+    </string-array>
+    <string-array name="literaw">
+        <item> 650 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 925 </item>
+        <item> 190 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+        <item> 1200 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+    </string-array>
+    <string-array name="literay">
+        <item> 650 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 925 </item>
+        <item> 190 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+        <item> 1200 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+    </string-array>
+    <string-array name="literaz">
+        <item> 650 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 925 </item>
+        <item> 190 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+        <item> 1200 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+    </string-array>
+    <string-array name="kolo">
+        <item> 650 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 925 </item>
+        <item> 190 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+        <item> 1200 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+    </string-array>
+    <string-array name="kwadrat">
+        <item> 650 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 925 </item>
+        <item> 190 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+        <item> 1200 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+    </string-array>
+    <string-array name="trojkat">
+        <item> 650 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 925 </item>
+        <item> 190 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+        <item> 1200 </item>
+        <item> 820 </item>
+        <item> 775 </item>
+        <item> 500 </item>
+        <item> 1075 </item>
+        <item> 500 </item>
+    </string-array>
+
+
 
 </resources>
