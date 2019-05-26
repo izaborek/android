@@ -47,7 +47,14 @@ public class DrawActivity extends AppCompatActivity  {
             String currentsign = Letter.ListOfLetters.get(i);
             if (currentsign.startsWith(String.valueOf(currentLetterId)) == true)
             {
-                currentLetterImage = currentsign.substring(1,currentsign.length());
+                if(currentLetterId < 10)
+                {
+                    currentLetterImage = currentsign.substring(1,currentsign.length());
+                }
+                else
+                {
+                    currentLetterImage = currentsign.substring(2,currentsign.length());
+                }
                 break;
             }
         }
@@ -125,7 +132,7 @@ public class DrawActivity extends AppCompatActivity  {
         nextB.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if(currentLetterId < Letter.ListOfLetters.size() - 1)
+                if(currentLetterId < Letter.ListOfLetters.size() )
                 {
                     MainActivity.numberOfLETTER++;
                     startActivity(new Intent(DrawActivity.this, DrawActivity.class));
