@@ -116,7 +116,7 @@ public class DrawActivity extends AppCompatActivity  {
         nextB.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if(currentLetterId < Letter.ListOfLetters.size())
+                if(currentLetterId < Letter.ListOfLetters.size() - 1)
                 {
                     MainActivity.numberOfLETTER++;
                     startActivity(new Intent(DrawActivity.this, DrawActivity.class));
