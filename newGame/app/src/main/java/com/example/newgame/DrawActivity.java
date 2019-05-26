@@ -39,6 +39,7 @@ public class DrawActivity extends AppCompatActivity  {
             if (currentsign.startsWith(String.valueOf(currentLetterId)) == true)
             {
                 currentLetterImage = currentsign.substring(1,currentsign.length());
+                break;
             }
         }
 
@@ -115,16 +116,23 @@ public class DrawActivity extends AppCompatActivity  {
         nextB.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                MainActivity.numberOfLETTER++;
-                startActivity(new Intent(DrawActivity.this, DrawActivity.class));
+                if(currentLetterId < Letter.ListOfLetters.size())
+                {
+                    MainActivity.numberOfLETTER++;
+                    startActivity(new Intent(DrawActivity.this, DrawActivity.class));
+                }
             }
         });
 
         prevB.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                MainActivity.numberOfLETTER--;
-                startActivity(new Intent(DrawActivity.this, DrawActivity.class));
+                if(currentLetterId > 1)
+                {
+                    MainActivity.numberOfLETTER--;
+                    startActivity(new Intent(DrawActivity.this, DrawActivity.class));
+                }
+
             }
         });
 

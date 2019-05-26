@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Toast;
 import java.lang.reflect.Field;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
 public class Canvas extends View {
@@ -23,7 +24,7 @@ public class Canvas extends View {
     protected final Logger log = Logger.getLogger(getClass().getName()); //java.util.logging.Logger
     int pointsCount;
     public int r = 255, g = 0, b = 0;
-
+    long start=System.currentTimeMillis();
 
     public Canvas(Context context, AttributeSet attrs,Letter letter) {
         super(context, attrs);
@@ -53,12 +54,19 @@ public class Canvas extends View {
     @Override
     protected void onDraw(android.graphics.Canvas canvas) {
         super.onDraw(canvas);
+        long stop=System.currentTimeMillis();
         paint.setTextSize(30);
         paint.setColor(Color.GRAY);
-        paint.setStrokeWidth(40f); //ch
+        paint.setStrokeWidth(40f);
         for (int i = 0;i < listOfPoints.size();i+=2) {
             canvas.drawPoint(listOfPoints.get(i),listOfPoints.get(i+1),paint);
         }
+        if(stop - start > 5000)
+        {
+            paint.setColor(Color.RED);
+            canvas.drawPoint(listOfPoints.get(0),listOfPoints.get(1),paint);
+        }
+        paint.setColor(Color.GRAY);
         paint.setStrokeWidth(15f); //change
         //paint.setAntiAlias(false);
         paint.setColor(Color.rgb(r,g,b));
@@ -156,22 +164,4 @@ public class Canvas extends View {
                 Toast.makeText(this.getContext(),"Brawo!",Toast.LENGTH_LONG).show();
             }
         }
-
-        public void RefreshViewAndShowNewView(int i, Letter letter)
-        {
-            cleanCanvas();
-            this.listOfPoints = letter.getListOfPoints();
-            int drawableId=0;
-            try {
-                Class res = R.drawable.class;
-                Field field = res.getField(letter.getName());
-                drawableId = field.getInt(null);
-            }
-            catch (Exception e) {
-                Log.e("MyTag", "Failure to get drawable id.", e);
-            }
-            setBackgroundResource(drawableId);
-        }
-
-
 }

@@ -22,6 +22,7 @@ public class BoardPickActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(BoardPickActivity.this, DrawActivity.class));
+        MainActivity.numberOfBoard = 3;
             }
         });
     }
