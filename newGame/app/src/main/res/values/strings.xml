@@ -385,36 +385,28 @@
         <item> 500 </item>
     </string-array>
     <string-array name="kwadrat">
-        <item> 650 </item>
-        <item> 820 </item>
-        <item> 775 </item>
-        <item> 500 </item>
-        <item> 925 </item>
-        <item> 190 </item>
-        <item> 1075 </item>
-        <item> 500 </item>
-        <item> 1200 </item>
-        <item> 820 </item>
-        <item> 775 </item>
-        <item> 500 </item>
-        <item> 1075 </item>
-        <item> 500 </item>
+        <item> 638 </item>
+        <item> 358 </item>
+        <item> 1128 </item>
+        <item> 358 </item>
+        <item> 1128 </item>
+        <item> 848 </item>
+        <item> 638 </item>
+        <item> 848 </item>
+        <item> 638 </item>
+        <item> 358 </item>
     </string-array>
     <string-array name="trojkat">
-        <item> 650 </item>
-        <item> 820 </item>
-        <item> 775 </item>
-        <item> 500 </item>
-        <item> 925 </item>
-        <item> 190 </item>
-        <item> 1075 </item>
-        <item> 500 </item>
-        <item> 1200 </item>
-        <item> 820 </item>
-        <item> 775 </item>
-        <item> 500 </item>
-        <item> 1075 </item>
-        <item> 500 </item>
+        <item> 638 </item>
+        <item> 358 </item>
+        <item> 1128 </item>
+        <item> 358 </item>
+        <item> 1128 </item>
+        <item> 848 </item>
+        <item> 638 </item>
+        <item> 848 </item>
+        <item> 638 </item>
+        <item> 358 </item>
     </string-array>
     <string-array name="cyfra1">
         <item> 650 </item>

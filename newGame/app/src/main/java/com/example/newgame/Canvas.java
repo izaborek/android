@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.Toast;
 import java.lang.reflect.Field;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
 public class Canvas extends View {
@@ -48,7 +47,6 @@ public class Canvas extends View {
             Log.e("MyTag", "Failure to get drawable id.", e);
         }
         setBackgroundResource(drawableId);
-
     }
 
     @Override
@@ -61,29 +59,45 @@ public class Canvas extends View {
         for (int i = 0;i < listOfPoints.size();i+=2) {
             canvas.drawPoint(listOfPoints.get(i),listOfPoints.get(i+1),paint);
         }
-        if(stop - start > 5000)
+           if(stop - start > 5000)
         {
-            paint.setColor(Color.RED);
+            paint.setColor(Color.YELLOW);
             canvas.drawPoint(listOfPoints.get(0),listOfPoints.get(1),paint);
         }
+
         paint.setColor(Color.GRAY);
         paint.setStrokeWidth(15f); //change
-        //paint.setAntiAlias(false);
         paint.setColor(Color.rgb(r,g,b));
         canvas.drawPath(path,paint);
     }
-
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         float xPos = event.getX();
         float yPos = event.getY();
         //log.log(Level.INFO, "Dotknięte współrzędne x:" + xPos + " Y:" + yPos, xPos );
-        double absDist =  DistanceBetweenPoints(xPos,yPos,listOfPoints.get(pointToBeTouched-1),listOfPoints.get(pointToBeTouched));
+        double absDist;
+        if(ifDraw == false)
+        {
+            cleanCanvas();
+            absDist =  DistanceBetweenPoints(xPos,yPos,listOfPoints.get(0),listOfPoints.get(1));
+        }
+        else
+        {
+            absDist = 1000;
+        }
         if (absDist <= 40 && pointToBeTouched == 1) {
             ifDraw = true;
+
+        }
+        if(ifDraw == true && pointToBeTouched == 1)
+        {
+            pointToBeTouched++;
+        }
+        else
+        {
+            VerifyIfProperPointHasBeenTouched(xPos,yPos);
         }
 
-        VerifyIfProperPointHasBeenTouched(xPos,yPos);
         if(ifDraw == true)
         {
             switch (event.getAction()) {
@@ -134,7 +148,7 @@ public class Canvas extends View {
             }
             else
             {
-                index = 0;
+                index = 99;
             }
         }
         return index + 1;
@@ -144,7 +158,7 @@ public class Canvas extends View {
     private void VerifyIfProperPointHasBeenTouched(float x, float y)
         {
             for (int i = 0;i < pointsCount/2; i++) {
-                if (i + 2 != pointToBeTouched && pointToBeTouched - 1!= CheckIfIsItRepeatedPoint(i*2)) {
+                if (i + 2 != pointToBeTouched  && pointToBeTouched - 1!= CheckIfIsItRepeatedPoint(i*2)) {
                     float xx = listOfPoints.get(i*2);
                     float yy = listOfPoints.get(i*2+1);
                     if (DistanceBetweenPoints(x, y, xx, yy) <= 50) {
@@ -153,13 +167,14 @@ public class Canvas extends View {
                             pointToBeTouched++;
                             break;
                         } else {
+                            cleanCanvas();
                             Toast.makeText(this.getContext(),"Rozpocznij jeszcze raz!",Toast.LENGTH_LONG).show();
                             cleanCanvas();
                         }
                     }
                 }
             }
-            if(pointToBeTouched == 8)
+            if(pointToBeTouched == listOfPoints.size()/2+1)
             {
                 Toast.makeText(this.getContext(),"Brawo!",Toast.LENGTH_LONG).show();
             }
