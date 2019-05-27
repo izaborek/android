@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Toast;
 import java.lang.reflect.Field;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Canvas extends View {
@@ -74,7 +75,7 @@ public class Canvas extends View {
     public boolean onTouchEvent(MotionEvent event) {
         float xPos = event.getX();
         float yPos = event.getY();
-        //log.log(Level.INFO, "Dotknięte współrzędne x:" + xPos + " Y:" + yPos, xPos );
+        log.log(Level.INFO, "Dotknięte współrzędne x:" + xPos + " Y:" + yPos, xPos );
         double absDist;
         if(ifDraw == false)
         {

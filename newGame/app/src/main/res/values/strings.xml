@@ -369,20 +369,16 @@
         <item> 500 </item>
     </string-array>
     <string-array name="kolo">
-        <item> 650 </item>
-        <item> 820 </item>
-        <item> 775 </item>
-        <item> 500 </item>
-        <item> 925 </item>
-        <item> 190 </item>
-        <item> 1075 </item>
-        <item> 500 </item>
-        <item> 1200 </item>
-        <item> 820 </item>
-        <item> 775 </item>
-        <item> 500 </item>
-        <item> 1075 </item>
-        <item> 500 </item>
+        <item> 920 </item>
+        <item> 300 </item>
+        <item> 1140 </item>
+        <item> 520 </item>
+        <item> 920 </item>
+        <item> 740 </item>
+        <item> 680 </item>
+        <item> 520 </item>
+        <item> 920 </item>
+        <item> 300 </item>
     </string-array>
     <string-array name="kwadrat">
         <item> 638 </item>
@@ -397,18 +393,6 @@
         <item> 358 </item>
     </string-array>
     <string-array name="trojkat">
-        <item> 638 </item>
-        <item> 358 </item>
-        <item> 1128 </item>
-        <item> 358 </item>
-        <item> 1128 </item>
-        <item> 848 </item>
-        <item> 638 </item>
-        <item> 848 </item>
-        <item> 638 </item>
-        <item> 358 </item>
-    </string-array>
-    <string-array name="cyfra1">
         <item> 650 </item>
         <item> 820 </item>
         <item> 775 </item>
@@ -419,10 +403,16 @@
         <item> 500 </item>
         <item> 1200 </item>
         <item> 820 </item>
+        <item> 650 </item>
+        <item> 820 </item>
+    </string-array>
+    <string-array name="cyfra1">
         <item> 775 </item>
         <item> 500 </item>
-        <item> 1075 </item>
-        <item> 500 </item>
+        <item> 1020 </item>
+        <item> 220 </item>
+        <item> 1020 </item>
+        <item> 815 </item>
     </string-array>
     <string-array name="cyfra2">
         <item> 650 </item>
