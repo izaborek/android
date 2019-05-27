@@ -54,4 +54,16 @@
         app:layout_constraintStart_toEndOf="@+id/board3Btn"
         app:layout_constraintTop_toBottomOf="@+id/board2Btn"
         app:srcCompat="@drawable/cyfry" />
+
+    <ImageButton
+        android:id="@+id/homeBtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/home" />
 </android.support.constraint.ConstraintLayout>
