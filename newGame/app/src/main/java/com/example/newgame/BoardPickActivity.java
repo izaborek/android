@@ -13,6 +13,7 @@ public class BoardPickActivity extends AppCompatActivity {
     private ImageButton boardSecond;
     private ImageButton boardThird;
     private ImageButton boardFourth;
+    private ImageButton homeB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,7 @@ public class BoardPickActivity extends AppCompatActivity {
         boardSecond = findViewById(R.id.board2Btn);
         boardThird = findViewById(R.id.board3Btn);
         boardFourth = findViewById(R.id.board4Btn);
+        homeB = findViewById(R.id.homeBtn);
 
         boardFirst.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +52,13 @@ public class BoardPickActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(BoardPickActivity.this, DrawActivity.class));
                 MainActivity.numberOfBoard = 4;
+            }
+        });
+
+        homeB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(BoardPickActivity.this, MainActivity.class));
             }
         });
     }

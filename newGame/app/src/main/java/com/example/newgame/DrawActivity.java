@@ -26,7 +26,7 @@ public class DrawActivity extends AppCompatActivity  {
     Canvas myCanvas;
     LinearLayout  myLayout, canvasLayout;
     ImageButton redB, blueB, greenB, yellowB, purpleB;
-    ImageButton nextB, prevB, retryB;
+    ImageButton nextB, prevB, retryB, homeB;
 
 
     ArrayList<Float> listka = new ArrayList<>();
@@ -91,6 +91,7 @@ public class DrawActivity extends AppCompatActivity  {
         nextB = findViewById(R.id.nextBtn);
         prevB = findViewById(R.id.previousBtn);
         retryB = findViewById(R.id.retryBtn);
+        homeB = findViewById(R.id.homeBtn);
 
         redB.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -156,6 +157,13 @@ public class DrawActivity extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(DrawActivity.this, DrawActivity.class));            }
+        });
+
+        homeB.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DrawActivity.this, MainActivity.class));
+            }
         });
     }
 
