@@ -74,6 +74,13 @@ public class Letter {
             ListOfLetters.add("8cyfra8");
             ListOfLetters.add("9cyfra9");
         }
+        else if (MainActivity.numberOfBoard == 2)
+        {
+            ListOfLetters.add("1czerwonykwadrat");
+            ListOfLetters.add("2zielonekolo");
+            ListOfLetters.add("3niebieskitrojkat");
+
+        }
 
     }
 

@@ -8,6 +8,8 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 import java.lang.reflect.Field;
 import java.util.List;
@@ -25,12 +27,13 @@ public class Canvas extends View {
     int pointsCount;
     public int r = 255, g = 0, b = 0;
     long start=System.currentTimeMillis();
+    boolean properColor = true;
+    String currentShapeName;
 
     public Canvas(Context context, AttributeSet attrs,Letter letter) {
         super(context, attrs);
         paint = new Paint();
         path = new Path();
-
         this.listOfPoints = letter.getListOfPoints();
         paint.setAntiAlias(true);
         paint.setColor(Color.rgb(r,g,b));
@@ -47,6 +50,7 @@ public class Canvas extends View {
         catch (Exception e) {
             Log.e("MyTag", "Failure to get drawable id.", e);
         }
+        currentShapeName = letter.getName();
         setBackgroundResource(drawableId);
     }
 
@@ -77,6 +81,51 @@ public class Canvas extends View {
         float yPos = event.getY();
         log.log(Level.INFO, "Dotknięte współrzędne x:" + xPos + " Y:" + yPos, xPos );
         double absDist;
+
+        if(currentShapeName.contains("czerwony"))
+        {
+            properColor = false;
+            if(this.r == 255 && this.g == 0 && this.b == 0)
+            {
+                properColor = true;
+            }
+            else
+            {
+                properColor = false;
+                ifDraw = false;
+                Toast.makeText(this.getContext(),"Wybierz czerwony kolor!",Toast.LENGTH_LONG).show();
+            }
+        }
+        else if(currentShapeName.contains("zielone"))
+        {
+            properColor = false;
+            //                myCanvas.r = 50; myCanvas.g = 205; myCanvas.b = 50;
+            if(this.r == 50 && this.g == 205 && this.b == 50)
+            {
+                properColor = true;
+            }
+            else
+            {
+                properColor = false;
+                ifDraw = false;
+                Toast.makeText(this.getContext(),"Wybierz zielony kolor!",Toast.LENGTH_LONG).show();
+            }
+        }
+        else if(currentShapeName.contains("niebieski"))
+        {
+            //                myCanvas.r = 30; myCanvas.g = 144; myCanvas.b = 255;
+            properColor = false;
+            if(this.r == 30 && this.g == 144 && this.b == 255)
+            {
+                properColor = true;
+            }
+            else
+            {
+                properColor = false;
+                ifDraw = false;
+                Toast.makeText(this.getContext(),"Wybierz niebieski kolor!",Toast.LENGTH_LONG).show();
+            }
+        }
         if(ifDraw == false)
         {
             cleanCanvas();
@@ -86,7 +135,7 @@ public class Canvas extends View {
         {
             absDist = 1000;
         }
-        if (absDist <= 40 && pointToBeTouched == 1) {
+        if (absDist <= 40 && pointToBeTouched == 1 && properColor) {
             ifDraw = true;
 
         }
