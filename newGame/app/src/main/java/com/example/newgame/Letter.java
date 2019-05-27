@@ -62,7 +62,7 @@ public class Letter {
             ListOfLetters.add("2kwadrat");
             ListOfLetters.add("3kolo");
         }
-        else if (MainActivity.numberOfBoard == 2)
+        else if (MainActivity.numberOfBoard == 4)
         {
             ListOfLetters.add("1cyfra1");
             ListOfLetters.add("2cyfra2");

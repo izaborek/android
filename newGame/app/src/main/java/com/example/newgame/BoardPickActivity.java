@@ -29,6 +29,7 @@ public class BoardPickActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(BoardPickActivity.this, DrawActivity.class));
                 MainActivity.numberOfBoard = 1;
+                MainActivity.numberOfLETTER =1;
             }
         });
         boardSecond.setOnClickListener(new View.OnClickListener() {
@@ -36,6 +37,7 @@ public class BoardPickActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(BoardPickActivity.this, DrawActivity.class));
                 MainActivity.numberOfBoard = 2;
+                MainActivity.numberOfLETTER =1;
             }
         });
         boardThird.setOnClickListener(new View.OnClickListener() {
@@ -43,6 +45,7 @@ public class BoardPickActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(BoardPickActivity.this, DrawActivity.class));
         MainActivity.numberOfBoard = 3;
+                MainActivity.numberOfLETTER =1;
             }
         });
         boardFourth.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +53,7 @@ public class BoardPickActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(BoardPickActivity.this, DrawActivity.class));
                 MainActivity.numberOfBoard = 4;
+                MainActivity.numberOfLETTER =1;
             }
         });
     }
