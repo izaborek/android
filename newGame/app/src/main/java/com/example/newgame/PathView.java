@@ -19,6 +19,9 @@ import android.util.Log;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 
+/**,
+ * Klasa odpowiedzialna  jest za wyświetlenie tutorialu gry w formie animacji
+ * */
 public class PathView extends View
 {
     Path path;

@@ -16,6 +16,11 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+
+/**,
+ * Klasa typu Canvas która obsługuje rysowanie kształtów, generowanie punktów na podstawie wybranego szablonu i pobiera punkty z pliku strings.xml
+ * Sprawdzana tutaj jest również poprawność rysowanej ścieżki. Możliwe jest powtórzenie kształtu lub przejście do następnego lub poprzedniego etapu
+ * */
 public class Canvas extends View {
 
     Paint paint;

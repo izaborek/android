@@ -13,6 +13,9 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+/**,
+ * Klasa odpowiedzialna  jest za wyświetlenie tutorialu gry w formie animacji i śledzenie ściezki ruchu za pomocą ImageView w kształcie dłoni
+ * */
 public class TutorialActivity extends AppCompatActivity {
 
     PathView path_view;
@@ -44,7 +47,7 @@ public class TutorialActivity extends AppCompatActivity {
     }
 
 
-
+//Obsługa wyświetlenia animacji
     private void animateHand(ImageView v) {
         AnimatorSet animSetXY = new AnimatorSet();
         ObjectAnimator animX = ObjectAnimator.ofFloat(v, "translationX", v.getX(), 520f);

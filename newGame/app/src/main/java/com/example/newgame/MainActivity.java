@@ -12,7 +12,10 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton playB, tutB, exitB;
     public static int numberOfLETTER = 1;
     public static int numberOfBoard;
-
+    /**,
+     * Klasa umożliwia wybór aktywności. Kliknięcie przycisku przenosi użytkownika do ekranu wyboru planszy. Możliwe jest również wyjście z gry lub
+     * wybór ekranu tutorialu
+     * */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

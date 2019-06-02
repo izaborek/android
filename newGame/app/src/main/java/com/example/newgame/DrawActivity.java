@@ -21,6 +21,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+
+
+/**,
+ * Klasa umożliwia wybór odpowiedniej planszy oraz ksztaltu. Obsługuje tworzenie instancji klasy Letter oraz przesyła ją do klasy Canvas
+ * */
 public class DrawActivity extends AppCompatActivity  {
 
     Canvas myCanvas;

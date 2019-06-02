@@ -3,6 +3,11 @@ package com.example.newgame;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**,
+ * Klasa, której obiektami są poszczególne kształty liter cyfer oraz figur. Obiekty te przesyłane są do klasy DrawActivity i tam następuje
+ * obsluga rysowania tych kształtów.
+ * */
 public class Letter {
 
     private String Name;
